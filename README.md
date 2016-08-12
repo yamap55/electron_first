@@ -2,10 +2,8 @@
 
 ## memo
 ```
-npm i -S react
-npm i -S react-dom
-npm i -S babel babel-preset-react babel-preset-es2015 babel-preset-stage-0
-npm i -S babel-core
+npm i -S react react-dom
+npm i -S babel-cli babel-core babel-preset-react babel-preset-es2015 babel-preset-stage-0
 ```
 
 ## 参考
