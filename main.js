@@ -42,6 +42,16 @@ var applicationMenu = Menu.buildFromTemplate([
     ]
   },
   {
+    label: 'DevTool',
+    submenu: [
+      {
+        label: 'Toggle Developer Tools',
+        accelerator: 'Alt+Command+I',
+        click: ()=> mainWindow.toggleDevTools()
+      }
+    ]
+  },
+  {
     label: 'Help',
     submenu: [
       {label: 'About'}
