@@ -1,6 +1,7 @@
 import React from 'react';
 import Griddle from 'griddle-react';
-import Login from './Login.jsx'
+import Login from './Login.jsx';
+import ObjectList from './ObjectList.jsx'
 
 class DataGrid extends React.Component{
 
@@ -35,10 +36,11 @@ class DataGrid extends React.Component{
         });
     }
 
-render(){
-    return this.state.isBusy
-        ? <div>Loading...</div>
-        : (<div>
+    render(){
+        return this.state.isBusy
+            ? <div>Loading...</div>
+            : (<div>
+                <div><ObjectList /></div>
                 <textarea
                     value={this.state.soqlText}
                     onChange={e=>{this.setState({soqlText:e.target.value})}}
@@ -55,7 +57,7 @@ render(){
                             resultsPerPage={20}
                         />
                     :   <div/>}
-        </div>);
+                </div>);
     }
 }
 
