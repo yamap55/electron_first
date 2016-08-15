@@ -32,7 +32,7 @@ class Login extends React.Component{
             }
 
             this.setState({ isBusy: false  });
-            this.props.setIsLogin(true);
+            this.props.setIsLogin(true,this.state.id,this.state.password);
         });
     }
 

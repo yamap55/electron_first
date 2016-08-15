@@ -10,19 +10,22 @@ class Root extends React.Component{
         super(props);
 
         this.state = {
-            isLogin:false
+            isLogin:false,
+            id:'',
+            password:''
         };
     }
 
-    setIsLogin(isLogin){
-        this.setState({isLogin:isLogin});
+    setIsLogin(isLogin,id,password){
+        this.setState({isLogin:isLogin,id:id,password:password});
     }
 
     render(){
+
         return (<div>
                 {this.state.isLogin
-                    ? (<DataGrid/>)
-                    : (<Login setIsLogin={(isLogin)=>{this.setIsLogin(isLogin)}}/>)}
+                    ? (<DataGrid id={this.state.id} password={this.state.password}/>)
+                    : (<Login setIsLogin={(isLogin,id,password)=>{this.setIsLogin(isLogin,id,password)}}/>)}
             </div>);
     }
 }

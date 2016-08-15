@@ -2,6 +2,9 @@ import React from 'react';
 import Griddle from 'griddle-react';
 import Login from './Login.jsx';
 import ObjectList from './ObjectList.jsx'
+//const electron = require('electron');
+const {BrowserWindow} = require('electron').remote
+//const BrowserWindow = electron.BrowserWindow;
 
 class DataGrid extends React.Component{
 
@@ -11,7 +14,9 @@ class DataGrid extends React.Component{
         this.state = {
             isBusy:false,
             soqlText:"SELECT Id, Name,Industry,AnnualRevenue FROM Account",
-            records:null
+            records:null,
+            id:props.id,
+            password:props.password
         };
     }
 
@@ -35,11 +40,18 @@ class DataGrid extends React.Component{
             }
         });
     }
+    hoge(){
+        const subWindow = new BrowserWindow({width: 800, height: 600});
+        subWindow.loadURL('https://login.salesforce.com/');
+        subWindow.webContents.executeJavaScript('document.getElementById("username").value = "' + this.state.id +'"');
+        subWindow.webContents.executeJavaScript('document.getElementById("password").value = "' + this.state.password +'"');
+        subWindow.webContents.executeJavaScript('document.getElementById("Login").click()');
+    }
 
     render(){
         return this.state.isBusy
             ? <div>Loading...</div>
-            : (<div>
+            : (<div><input type="button" value="CLICK ME" onClick={()=>{this.hoge(this.state.id,this.state.password)}}/>
                 <div><ObjectList /></div>
                 <textarea
                     value={this.state.soqlText}
