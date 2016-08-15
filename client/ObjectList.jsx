@@ -9,7 +9,9 @@ class ObjectList extends React.Component{
             objectList:[]
         };
         Login.conn.describeGlobal((a,b)=>{
-                const objectList = b.sobjects.map(x=>({name:x.name,label:x.label})).sort((a,b)=>{
+                const objectList = b.sobjects.filter((o)=>{
+                    return o.queryable && o.layoutable && o.createable;
+                }).map(x=>({name:x.name,label:x.label})).sort((a,b)=>{
                     if( a.label<b.label ) return -1;
                     if( a.label>b.label ) return 1;
                     return 0;
