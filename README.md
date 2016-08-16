@@ -10,6 +10,7 @@ npm i -S gulp
 npm i -g gulp-cli
 npm i -S gulp-babel
 npm i -S gulp-load-plugins
+npm i -S electron-connect
 ```
 
 ## 参考

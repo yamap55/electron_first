@@ -4,6 +4,7 @@
   "description": "サンプル",
   "main": "main.js",
   "scripts": {
+    "start": "gulp start",
     "compile": "gulp compile",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -23,6 +24,7 @@
     "babel-preset-es2015": "^6.13.2",
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
+    "electron-connect": "^0.4.4",
     "griddle-react": "^0.6.1",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
