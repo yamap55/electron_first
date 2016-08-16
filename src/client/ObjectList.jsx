@@ -1,5 +1,5 @@
 import React from 'react';
-import Login from './Login.jsx';
+import Login from './Login.js';
 
 class ObjectList extends React.Component{
     constructor(props) {

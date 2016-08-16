@@ -6,6 +6,10 @@ npm i -S react react-dom
 npm i -S babel-cli babel-core babel-preset-react babel-preset-es2015 babel-preset-stage-0
 npm i -S jsforce
 npm i -S griddle-react
+npm i -S gulp
+npm i -g gulp-cli
+npm i -S gulp-babel
+npm i -S gulp-load-plugins
 ```
 
 ## 参考

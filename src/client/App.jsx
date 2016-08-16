@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Root from './Root.jsx'
+import Root from './Root.js'
 
 let container = document.querySelector("#container");
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import jsforce from 'jsforce';
 import Griddle from 'griddle-react';
-import DataGrid from './DataGrid.jsx';
-import Login from './Login.jsx';
+import DataGrid from './DataGrid.js';
+import Login from './Login.js';
 
 class Root extends React.Component{
 

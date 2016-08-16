@@ -4,6 +4,7 @@
   "description": "サンプル",
   "main": "main.js",
   "scripts": {
+    "compile": "gulp compile",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,6 +24,9 @@
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
     "griddle-react": "^0.6.1",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-load-plugins": "^1.2.4",
     "jsforce": "^1.7.0",
     "react": "^15.3.0",
     "react-dom": "^15.3.0"
