@@ -2,9 +2,8 @@ import React from 'react';
 import Griddle from 'griddle-react';
 import Login from './Login.js';
 import ObjectList from './ObjectList.js'
-//const electron = require('electron');
-const {BrowserWindow} = require('electron').remote
-//const BrowserWindow = electron.BrowserWindow;
+import electron from 'electron'
+const {BrowserWindow} = electron.remote
 
 class DataGrid extends React.Component{
 

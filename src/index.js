@@ -1,9 +1,7 @@
-const electron = require('electron');
-const remote = electron.remote;
-//var app = electron.app;
+import electron, {remote} from 'electron';
 const Menu = remote.Menu;
 
-var menu = Menu.buildFromTemplate([
+const menu = Menu.buildFromTemplate([
   {label: 'すべて選択'},
   {type: 'separator'},
   {label: 'Copy', accelerator: 'CmdOrCtrl+C'},

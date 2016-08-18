@@ -22,7 +22,7 @@ app.on('ready', function() {
 });
 
 // アプリケーションメニュー
-var applicationMenu = Menu.buildFromTemplate([
+const applicationMenu = Menu.buildFromTemplate([
   {
     label: 'File',
     submenu: [
