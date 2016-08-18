@@ -2,6 +2,7 @@ import React from 'react';
 import Griddle from 'griddle-react';
 import Login from './Login.js';
 import ObjectList from './ObjectList.js'
+import FieldsList from './FieldsList.js'
 import electron from 'electron'
 const {BrowserWindow} = electron.remote
 
@@ -15,8 +16,10 @@ class DataGrid extends React.Component{
             soqlText:"SELECT Id, Name,Industry,AnnualRevenue FROM Account",
             records:null,
             id:props.id,
-            password:props.password
+            password:props.password,
+            objectId:""
         };
+        this.objectId = "";
     }
 
     //SOQLを発行しデータを取得
@@ -47,12 +50,18 @@ class DataGrid extends React.Component{
         subWindow.webContents.executeJavaScript('document.getElementById("Login").click()');
     }
 
+    changeObject(objectId){
+        this.state.objectId = objectId;
+    }
+
     render(){
+        DataGrid.objectId = this.state.objectId;
         return this.state.isBusy
             ? <div>Loading...</div>
             : (<div>
                 <div><input type="button" value="CLICK ME" className="btn" onClick={()=>{this.hoge(this.state.id,this.state.password)}}/></div>
-                <div><ObjectList /></div>
+                <div><ObjectList func={(objectId)=>this.setState({objectId:objectId})} selectedValue={this.state.objectId}/></div>
+                <div><FieldsList objectId={this.state.objectId} /></div>
                 <textarea
                     value={this.state.soqlText}
                     className="form-control"

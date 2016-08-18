@@ -11,6 +11,7 @@ npm i -g gulp-cli
 npm i -S gulp-babel
 npm i -S gulp-load-plugins
 npm i -S electron-connect
+npm i -S lodash
 ```
 
 ## 参考
