@@ -50,15 +50,18 @@ class DataGrid extends React.Component{
     render(){
         return this.state.isBusy
             ? <div>Loading...</div>
-            : (<div><input type="button" value="CLICK ME" onClick={()=>{this.hoge(this.state.id,this.state.password)}}/>
+            : (<div>
+                <div><input type="button" value="CLICK ME" className="btn" onClick={()=>{this.hoge(this.state.id,this.state.password)}}/></div>
                 <div><ObjectList /></div>
                 <textarea
                     value={this.state.soqlText}
+                    className="form-control"
                     onChange={e=>{this.setState({soqlText:e.target.value})}}
                 /><br/>
                 <input
                     type="button"
                     value="Exec SOQL"
+                    className="btn"
                     onClick={()=>{this.onGetButtonClick()}}
                 />
                 {this.state.records

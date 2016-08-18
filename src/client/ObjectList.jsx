@@ -25,9 +25,9 @@ class ObjectList extends React.Component{
         if (this.state.objectList) {
             const options = this.state.objectList.map(
                 o=>(<option value={o.name} key={o.name}>{o.label + "（"+o.name+"）"}</option>));
-            return (<select size="10">{options}</select>)
+            return (<select className="form-control" size="10">{options}</select>)
         } else {
-            return (<select size="10"></select>);
+            return (<select className="form-control" size="10"></select>);
         }
     }
 }

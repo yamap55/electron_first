@@ -40,10 +40,17 @@ class Login extends React.Component{
         const {isLogin} = this.props;
         return this.state.isBusy
         ? (<div>Loading...</div>)
-        : (<div>
-                <label>Id:</label><input className="block" value={this.state.id} onChange={e=>{this.setState({id:e.target.value})}}/><br/>
-                <label>Password + token:</label><input type="password" value={this.state.password} onChange={e=>{this.setState({password:e.target.value})}}/><br/>
-                <input type="button" value="Login" onClick={()=>{this.onLoginButtonClick(this.state.id,this.state.password)}}/>
+        : (<div className="form-signin">
+                <h2 className="form-signin-heading">Please sign in</h2>
+                <div className="form-group">
+                    <label htmlFor="id">Salesforce User Name</label>
+                    <input id="id" type="email" className="form-control" placeholder="Salesforce User Name" value={this.state.id} onChange={e=>{this.setState({id:e.target.value})}} />
+                    <label htmlFor="password">Salesforce Password</label>
+                    <input id="password" type="password" className="form-control" placeholder="Salesforce Password" value={this.state.password}  onChange={e=>{this.setState({password:e.target.value})}} />
+                </div>
+                <div className="form-group">
+                    <input type="button" value="Login" className="btn btn-primary btn-block"  onClick={()=>{this.onLoginButtonClick(this.state.id,this.state.password)}} />
+                </div>
             </div>);
     }
 }
