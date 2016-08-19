@@ -11,15 +11,13 @@ class ObjectList extends React.Component{
             options:[]
         };
         Login.conn.describeGlobal((a,b)=>{
-                const objectList = b.sobjects.filter((o)=>{
+                const options = b.sobjects.filter((o)=>{
                     return o.queryable && o.layoutable && o.createable;
-                }).map(x=>({name:x.name,label:x.label})).sort((a,b)=>{
+                }).sort((a,b)=>{
                     if( a.label<b.label ) return -1;
                     if( a.label>b.label ) return 1;
                     return 0;
-                });
-                const options = objectList.map(
-                    o=>(<option value={o.name} key={o.name} onClick={e=>{this.func(e.target.value, true)}}>{o.label + "（"+o.name+"）"}</option>));
+                }).map(o=>(<option value={o.name} key={o.name} onClick={e=>{this.func(e.target.value, true)}}>{o.label + "（"+o.name+"）"}</option>));
                 this.setState({ options: options });
             }
         );

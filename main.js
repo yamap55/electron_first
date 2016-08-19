@@ -21,7 +21,6 @@ app.on('ready', function() {
   });
 });
 
-// アプリケーションメニュー
 const applicationMenu = Menu.buildFromTemplate([
   {
     label: 'File',

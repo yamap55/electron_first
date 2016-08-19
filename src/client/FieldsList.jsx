@@ -17,17 +17,13 @@ class FieldsList extends React.Component{
             this.state.isBusy = true;
             Login.conn.describe(objectId, (err, meta) => {
                 if (err) { return console.error(err); }
-                console.log(meta.fields);
-                const fieldsList = meta.fields.filter(
+                const options = meta.fields.filter(
                     (field)=>{return field.name.toLowerCase() == "id" || field.createable || field.updateable}
-                ).map((field)=>({name:field.name, label:field.label})).sort(
-                    (a,b)=>{
-                        if( a.label<b.label ) return -1;
-                        if( a.label>b.label ) return 1;
-                        return 0;
-                    });
-                const options = fieldsList.map(
-                    o=>(<option value={o.name} key={o.name}>{o.label + "（"+o.name+"）"}</option>));
+                ).sort((a,b)=>{
+                    if( a.label<b.label ) return -1;
+                    if( a.label>b.label ) return 1;
+                    return 0;
+                }).map((field)=>(<option value={field.name} key={field.name}>{field.label + "（"+field.name+"）"}</option>));
                 this.state.isBusy = false;
                 this.setState({ options: options});
             });
@@ -46,7 +42,6 @@ class FieldsList extends React.Component{
         } else {
             this.getObjectFields(this.props.objectId);
             return (<select className="form-control" size="10">{this.state.options}</select>);
-
         }
     }
 }
