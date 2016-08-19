@@ -9,3 +9,7 @@ textarea{
 .form-signin-heading .form-signin {
     margin-bottom: 10px;
 }
+.fieldsArea {
+    overflow: scroll;
+    height:100px;
+}
