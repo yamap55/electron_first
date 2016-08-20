@@ -5,7 +5,6 @@ import DataGrid from './DataGrid.js'
 class ObjectList extends React.Component{
     constructor(props) {
         super(props);
-        this.func = props.func;
 
         this.state = {
             options:[]
@@ -17,7 +16,7 @@ class ObjectList extends React.Component{
                     if( a.label<b.label ) return -1;
                     if( a.label>b.label ) return 1;
                     return 0;
-                }).map(o=>(<option value={o.name} key={o.name} onClick={e=>{this.func(e.target.value, true)}}>{o.label + "（"+o.name+"）"}</option>));
+                }).map(o=>(<option value={o.name} key={o.name} onClick={e=>{props.changeSelectedObject(e.target.value, true)}}>{o.label + "（"+o.name+"）"}</option>));
                 this.setState({ options: options });
             }
         );

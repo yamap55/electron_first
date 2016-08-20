@@ -60,7 +60,7 @@ class DataGrid extends React.Component{
             ? <div>Loading...</div>
             : (<div>
                 <div><input type="button" value="CLICK ME" className="btn" onClick={()=>{this.hoge(this.state.id,this.state.password)}}/></div>
-                <div><ObjectList func={(objectId)=>this.setState({objectId:objectId})} selectedValue={this.state.objectId}/></div>
+                <div><ObjectList changeSelectedObject={(objectId)=>this.setState({objectId:objectId})} selectedValue={this.state.objectId}/></div>
                 <div><FieldsList objectId={this.state.objectId} /></div>
                 <textarea
                     value={this.state.soqlText}
