@@ -37,11 +37,26 @@ class FieldsList extends React.Component{
                L.isEqual(this.state.fields,nextState.fields)
            );
     }
+    get operation() {
+      const ope =  {
+        eq : {label:"=",value:"="},
+        ne : {label:"!=",value:"!="},
+        gt : {label:">",value:">"},
+        ge : {label:">=",value:">="},
+        lt : {label:"<",value:"<"},
+        le : {label:"<=",value:"<="},
+      };
+      const operationOptionTag = Object.keys(ope).map(
+        (o)=>(<option value={ope[o].value} key={ope[o].value}>{ope[o].label}</option>)
+      );
+      ope.selectTag = (<div><select className="form-control">{operationOptionTag}</select></div>);
+      return ope;
+    }
 
     render(){
         if (this.state.isBusy || !this.props.objectId) {
             // Updating or First Access.
-            return (<div><select className="form-control"></select><div className="fieldsArea"></div></div>);
+            return (<div><select className="form-control"></select>{this.operation.selectTag}<div className="fieldsArea"></div></div>);
         } else if(this.state.changed) {
             // Fields update.
             const options = this.state.fields.map((field)=>(<option value={field.name} key={field.name}>{field.label + "（"+field.name+"）"}</option>));
@@ -49,11 +64,11 @@ class FieldsList extends React.Component{
                 <div className="checkbox" key={field.name}><label><input type="checkbox" value={field.name}/>{field.label}</label></div>
             ));
             this.state.changed = false;
-            return (<div><select className="form-control">{options}</select><div className="fieldsArea">{checkboxs}</div></div>);
+            return (<div><select className="form-control">{options}</select>{this.operation.selectTag}<div className="fieldsArea">{checkboxs}</div></div>);
         } else {
             // Search ObjectId changeed.
             this.getObjectFields(this.props.objectId);
-            return (<div><select className="form-control"></select><div className="fieldsArea"></div></div>);
+            return (<div><select className="form-control"></select>{this.operation.selectTag}<div className="fieldsArea"></div></div>);
         }
     }
 }
