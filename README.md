@@ -12,6 +12,7 @@ npm i -S gulp-babel
 npm i -S gulp-load-plugins
 npm i -S electron-connect
 npm i -S lodash
+npm i -S i18next
 ```
 
 ## 参考

@@ -29,6 +29,7 @@
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-load-plugins": "^1.2.4",
+    "i18next": "^3.4.1",
     "jsforce": "^1.7.0",
     "lodash": "^4.15.0",
     "react": "^15.3.0",

@@ -1,0 +1,8 @@
+{
+  "login" : {
+    "message" : "ログインしてください。",
+    "username":"Salesforce ユーザ名",
+    "password":"Salesforce パスワード",
+    "loginbuttontext":"Login"
+  }
+}
