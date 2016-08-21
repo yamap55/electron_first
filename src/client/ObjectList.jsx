@@ -1,8 +1,9 @@
 import React from 'react';
 import Login from './Login.js';
 import DataGrid from './DataGrid.js'
+import DispatchableComponent from '../base/DispatchableComponent.js';
 
-class ObjectList extends React.Component{
+class ObjectList extends DispatchableComponent {
     constructor(props) {
         super(props);
 

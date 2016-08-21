@@ -1,8 +1,9 @@
 import React from 'react';
 import Login from './Login.js';
 import L from 'lodash';
+import DispatchableComponent from '../base/DispatchableComponent.js';
 
-class FieldsList extends React.Component{
+class FieldsList extends DispatchableComponent {
     constructor(props) {
         super(props);
         this.state = {

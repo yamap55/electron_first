@@ -1,13 +1,14 @@
-import React from 'react';
+import React from 'React';
 import Griddle from 'griddle-react';
 import Login from './Login.js';
 import ObjectList from './ObjectList.js'
 import FieldsList from './FieldsList.js'
 import {remote} from 'electron';
+import DispatchableComponent from '../base/DispatchableComponent.js';
 const dialog = remote.dialog;
 const BrowserWindow = remote.BrowserWindow
 
-class DataGrid extends React.Component{
+class DataGrid extends DispatchableComponent {
 
     constructor(props) {
         super(props);

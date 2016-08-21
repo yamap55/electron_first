@@ -1,7 +1,9 @@
-import React from 'react';
+import React from 'React';
 import jsforce from 'jsforce';
+import DispatchableComponent from '../base/DispatchableComponent.js';
 
-class Login extends React.Component{
+class Login extends DispatchableComponent {
+
     constructor(props) {
         super(props);
 
@@ -41,15 +43,15 @@ class Login extends React.Component{
         return this.state.isBusy
         ? (<div>Loading...</div>)
         : (<div className="form-signin">
-                <h2 className="form-signin-heading">Please sign in</h2>
+                <h2 className="form-signin-heading">{this.t("login.message")}</h2>
                 <div className="form-group">
-                    <label htmlFor="id">Salesforce User Name</label>
-                    <input id="id" type="email" className="form-control" placeholder="Salesforce User Name" value={this.state.id} onChange={e=>{this.setState({id:e.target.value})}} />
-                    <label htmlFor="password">Salesforce Password</label>
-                    <input id="password" type="password" className="form-control" placeholder="Salesforce Password" value={this.state.password}  onChange={e=>{this.setState({password:e.target.value})}} />
+                    <label htmlFor="id">{this.t("login.username")}</label>
+                    <input id="id" type="email" className="form-control" placeholder={this.t("login.username")} value={this.state.id} onChange={e=>{this.setState({id:e.target.value})}} />
+                    <label htmlFor="password">{this.t("login.password")}</label>
+                    <input id="password" type="password" className="form-control" placeholder={this.t("login.password")} value={this.state.password}  onChange={e=>{this.setState({password:e.target.value})}} />
                 </div>
                 <div className="form-group">
-                    <input type="button" value="Login" className="btn btn-primary btn-block"  onClick={()=>{this.onLoginButtonClick(this.state.id,this.state.password)}} />
+                    <input type="button" value={this.t("login.loginbuttontext")} className="btn btn-primary btn-block"  onClick={()=>{this.onLoginButtonClick(this.state.id,this.state.password)}} />
                 </div>
             </div>);
     }

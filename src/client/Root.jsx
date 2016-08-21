@@ -3,9 +3,9 @@ import jsforce from 'jsforce';
 import Griddle from 'griddle-react';
 import DataGrid from './DataGrid.js';
 import Login from './Login.js';
+import Provider from '../base/Provider.js';
 
-class Root extends React.Component{
-
+class Root extends Provider {
     constructor(props) {
         super(props);
 
@@ -21,7 +21,6 @@ class Root extends React.Component{
     }
 
     render(){
-
         return (<div>
                 {this.state.isLogin
                     ? (<DataGrid id={this.state.id} password={this.state.password}/>)
