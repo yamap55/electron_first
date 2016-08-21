@@ -3,8 +3,9 @@ import Griddle from 'griddle-react';
 import Login from './Login.js';
 import ObjectList from './ObjectList.js'
 import FieldsList from './FieldsList.js'
-import electron from 'electron'
-const {BrowserWindow} = electron.remote
+import {remote} from 'electron';
+const dialog = remote.dialog;
+const BrowserWindow = remote.BrowserWindow
 
 class DataGrid extends React.Component{
 
@@ -17,7 +18,8 @@ class DataGrid extends React.Component{
             records:null,
             id:props.id,
             password:props.password,
-            objectId:""
+            objectId:"",
+            filePath: ""
         };
         this.objectId = "";
     }
@@ -54,11 +56,28 @@ class DataGrid extends React.Component{
         this.state.objectId = objectId;
     }
 
+    getFile(){
+      const focusedWindow = BrowserWindow.getFocusedWindow();
+        dialog.showOpenDialog(focusedWindow, {
+          properties: ['openFile'],
+          filters: [{
+          name: 'JSON File',
+          extensions: ['json']
+        }]},
+        (files)=>{
+          const path = files ? files[0] : "";
+          this.setState({ filePath: path });
+        }
+      );
+    }
+
     render(){
         DataGrid.objectId = this.state.objectId;
         return this.state.isBusy
             ? <div>Loading...</div>
             : (<div>
+                <input type="button" name="fileselect" className="btn" onClick={()=>{this.getFile()}} value="Setting File"/>
+                <input type="text" name="filepath" className="form-control" placeholder="Setting File Path" value={this.state.filePath} onClick={()=>{this.getFile()}} />
                 <div><input type="button" value="CLICK ME" className="btn" onClick={()=>{this.hoge(this.state.id,this.state.password)}}/></div>
                 <div><ObjectList changeSelectedObject={(objectId)=>this.setState({objectId:objectId})} selectedValue={this.state.objectId}/></div>
                 <div><FieldsList objectId={this.state.objectId} /></div>
