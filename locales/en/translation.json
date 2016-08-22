@@ -1,6 +1,10 @@
 {
   "global" : {
-    "loading" : "Loading..."
+    "loading" : "Loading...",
+    "language" : {
+      "ja" : "japanese",
+      "en" : "english"
+      }
   },
   "login" : {
     "message" : "Please sign in",

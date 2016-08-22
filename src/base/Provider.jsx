@@ -13,8 +13,8 @@ class Provider extends React.Component {
   constructor(props) {
     super(props);
     i18next.init({
-      lng:'ja', // TODO
-      fallbackLng:'ja', // TODO
+      lng:'en',
+      fallbackLng:'en',
       resources:{
         "ja":{
           translation:require('../../locales/ja/translation.json')

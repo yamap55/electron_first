@@ -4,9 +4,8 @@ import DispatchableComponent from '../base/DispatchableComponent.js';
 
 class Login extends DispatchableComponent {
 
-    constructor(props) {
+    constructor(props, context) {
         super(props);
-
         this.state = {
             id: "",
             password: "",
@@ -53,6 +52,7 @@ class Login extends DispatchableComponent {
                 <div className="form-group">
                     <input type="button" value={this.t("login.loginbuttontext")} className="btn btn-primary btn-block"  onClick={()=>{this.onLoginButtonClick(this.state.id,this.state.password)}} />
                 </div>
+                <footer><select id="language" value={this.props.language} onChange={(e)=>{this.props.setLanguage(e.target.value)}}>{["en","ja"].map((lng)=>(<option key={lng} value={lng}>{this.t("global.language."+lng)}</option>))}</select></footer>
             </div>);
     }
 }

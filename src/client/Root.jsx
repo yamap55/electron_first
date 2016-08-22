@@ -12,7 +12,8 @@ class Root extends Provider {
         this.state = {
             isLogin:false,
             id:'',
-            password:''
+            password:'',
+            language:this.i18next.options.lng
         };
     }
 
@@ -20,11 +21,16 @@ class Root extends Provider {
         this.setState({isLogin:isLogin,id:id,password:password});
     }
 
+    setLanguage(lng){
+        this.i18next.changeLanguage(lng);
+        this.setState({language:lng});
+    }
+
     render(){
         return (<div>
                 {this.state.isLogin
                     ? (<DataGrid id={this.state.id} password={this.state.password}/>)
-                    : (<Login setIsLogin={(isLogin,id,password)=>{this.setIsLogin(isLogin,id,password)}}/>)}
+                    : (<Login language={this.state.language} setLanguage={(lng)=>{this.setLanguage(lng)}} setIsLogin={(isLogin,id,password)=>{this.setIsLogin(isLogin,id,password)}}/>)}
             </div>);
     }
 }

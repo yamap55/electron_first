@@ -1,6 +1,10 @@
 {
   "global" : {
-    "loading" : "ロード中..."
+    "loading" : "ロード中...",
+    "language" : {
+      "ja" : "日本語",
+      "en" : "英語"
+      }
   },
   "login" : {
     "message" : "ログインしてください。",
