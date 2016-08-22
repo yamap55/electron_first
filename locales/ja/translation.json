@@ -1,4 +1,7 @@
 {
+  "global" : {
+    "loading" : "ロード中..."
+  },
   "login" : {
     "message" : "ログインしてください。",
     "username":"Salesforce ユーザ名",

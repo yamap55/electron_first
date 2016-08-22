@@ -41,7 +41,7 @@ class Login extends DispatchableComponent {
     render(){
         const {isLogin} = this.props;
         return this.state.isBusy
-        ? (<div>Loading...</div>)
+        ? (<div>{this.t("global.loading")}</div>)
         : (<div className="form-signin">
                 <h2 className="form-signin-heading">{this.t("login.message")}</h2>
                 <div className="form-group">
