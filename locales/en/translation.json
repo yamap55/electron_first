@@ -10,6 +10,7 @@
     "message" : "Please sign in",
     "username":"Salesforce User Name",
     "password":"Salesforce Password",
-    "loginbuttontext":"Login"
+    "loginbuttontext":"Login",
+    "error":"Login failed"
   }
 }

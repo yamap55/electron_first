@@ -10,6 +10,7 @@
     "message" : "ログインしてください。",
     "username":"Salesforce ユーザ名",
     "password":"Salesforce パスワード",
-    "loginbuttontext":"Login"
+    "loginbuttontext":"Login",
+    "error":"ログインに失敗しました"
   }
 }
