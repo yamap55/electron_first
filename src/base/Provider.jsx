@@ -3,7 +3,7 @@ import i18next from 'i18next';
 
 class Provider extends React.Component {
   static get childContextTypes() {
-      return {i18next: React.PropTypes.any};
+    return {i18next: React.PropTypes.any};
   }
 
   getChildContext() {
