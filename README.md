@@ -18,3 +18,4 @@ npm i -S i18next
 ## 参考
 - [30分で出来る、JavaScript (Electron) でデスクトップアプリを作って配布するまで](http://qiita.com/nyanchu/items/15d514d9b9f87e5c0a29)
 - [ElectronでReact/Salesforceなデスクトップアプリを作ってみた](http://info.skyvisualeditor.com/blog/2016/160208_001566.php)
+- [Gitのコミットメッセージの書き方](http://qiita.com/itosho/items/9565c6ad2ffc24c09364)
