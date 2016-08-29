@@ -3,6 +3,7 @@ import jsforce from 'jsforce';
 import Griddle from 'griddle-react';
 import DataGrid from './DataGrid.js';
 import Login from './Login.js';
+import Main from './Main.js';
 import Provider from '../base/Provider.js';
 
 class Root extends Provider {
@@ -29,7 +30,7 @@ class Root extends Provider {
   render(){
     return (<div>
       {this.state.isLogin
-          ? (<DataGrid id={this.state.id} password={this.state.password}/>)
+          ? (<Main id={this.state.id} password={this.state.password} />)
           : (<Login language={this.state.language} setLanguage={(lng)=>{this.setLanguage(lng)}} setIsLogin={(isLogin,id,password)=>{this.setIsLogin(isLogin,id,password)}}/>)}
       </div>);
   }
