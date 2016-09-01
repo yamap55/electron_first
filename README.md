@@ -2,6 +2,7 @@
 
 ## memo
 ```
+npm i -g electron-prebuilt
 npm i -S react react-dom
 npm i -S babel-cli babel-core babel-preset-react babel-preset-es2015 babel-preset-stage-0
 npm i -S jsforce
